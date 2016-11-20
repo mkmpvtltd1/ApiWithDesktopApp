@@ -44,5 +44,6 @@ jspm_packages
 
 # Yarn Integrity file
 .yarn-integrity
-client/
-web/
+
+# webstorm temp file
+.idea
