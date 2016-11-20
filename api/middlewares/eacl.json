@@ -1,0 +1,14 @@
+[
+  {
+    "admin": {
+      "/api/v1/movie": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ],
+      "/api/v1/movies": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    }
+  },
+  {
+    "user": {
+      "/api/v1/movie": [ "GET" ],
+      "/api/v1/movies": [ "GET" ]
+    }
+  }
+]

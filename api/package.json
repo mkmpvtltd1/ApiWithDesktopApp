@@ -1,0 +1,33 @@
+{
+  "name": "theater",
+  "version": "1.0.0",
+  "description": "Api for Theater",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "debug": "node --inspect server.js",
+    "clean": "npm prune"
+  },
+  "keywords": [
+    "thater",
+    "desktop",
+    "app",
+    "website"
+  ],
+  "author": "Manoj Kumar Mahato",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "jwt-simple": "^0.5.0",
+    "mongoose": "^4.6.8",
+    "morgan": "^1.7.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "mocha": "^3.1.2"
+  }
+}
