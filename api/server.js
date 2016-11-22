@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-
+// TODO : Use path for all opereting system
 var app = express();
 
 app.use(logger('dev')); // Display Log in console.
@@ -33,10 +33,11 @@ app.use('/', require('./routes'));
 //app.use(express.compress());
 app.use('/public', express.static(__dirname + '/public'));
 // If no route is matched by now, it must be a 404
-/**app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+/**
+ * app.use(function(req, res, next) {
+ *   var err = new Error('Not Found');
+ *   err.status = 404;
+  *  next(err);
 });
  */
 // Start the server
