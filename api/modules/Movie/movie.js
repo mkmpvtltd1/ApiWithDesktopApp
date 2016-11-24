@@ -31,7 +31,6 @@ var movies = {
         var id = req.query.id;
         Movie.find({_id: id}, function (err, findMovies) {
             if (!findMovies[0]) {
-                // If authentication fails, we send a 401 back
                 res.status(401);
                 res.json({
                     "status": 401,
@@ -40,14 +39,36 @@ var movies = {
                 return;
             }
             else {
-                // If authentication is success, we will generate a token
-                // and dispatch it to the client
                 res.status(200);
                 res.json(findMovies[0]);
                 return;
             }
         });
     },
+    update: function (req, res, next) {
+        var updatemovie = new Movie(req.body);
+        var id = req.query.id;
+        Movie.find({_id: id}, function (error, movie) {
+            if (error) return next(error);
+            if (!movie) {
+                return res.status(404).json({
+                    message: 'Movie with id ' + id + ' can not be found.'
+                });
+            }
+            movie.update(req.body, function (error, movie) {
+                if (error) return next(error);
+                res.json(movie);
+            });
+        });
+    },
+
+    delete: function (req, res, next) {
+        var id = req.query.id;
+        Movie.remove({_id: id}, function (err, result) {
+            if (err) return next(err);
+            res.json(result);
+        });
+    }
 };
 
 module.exports = movies;

@@ -52,6 +52,7 @@ var auth = {
                 }
                 else {
                     userFun.findUser(username, password, res);
+                    res.status(201);
                 }
             });
 

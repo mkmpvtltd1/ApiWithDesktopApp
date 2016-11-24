@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-// TODO : Use path for all opereting system
+// TODO : Use path for all operating system
 var app = express();
 
 app.use(logger('dev')); // Display Log in console.
@@ -26,7 +26,7 @@ app.all('/*', function (req, res, next) {
 // Any URL's that do not follow the below pattern should be avoided unless you
 // are sure that authentication is not needed
 app.use('/', require('./docs'));
-app.all('/api/v1/*', [require('./middlewares/validateRequest')]);
+//app.all('/api/v1/*', [require('./middlewares/validateRequest')]);
 app.use('/', require('./routes'));
 
 // New call to compress content

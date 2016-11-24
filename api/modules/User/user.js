@@ -3,6 +3,7 @@
  */
 var jwt = require('jwt-simple'),
     crypto = require('crypto');
+var User = require('./models/user');
 var user = {
     findUser: function (username, password, res) {
         User.find({username: username}, function (err, dbUserObj) {
@@ -38,29 +39,30 @@ var user = {
             }
         });
     },
-    hashPassword: function (password, salt) {
-        if (salt && password) {
-            return crypto.pbkdf2Sync(password, new Buffer(salt, 'base64'), 10000, 64, 'SHA1').toString('base64');
-        } else {
-            return password;
-        }
-    },
-    genToken: function (user) {
-        var expires = expiresIn(require('../../config/config').tokenexpires); // in seconds.
-        var token = jwt.encode({
-            exp: expires, user: user
-        }, require('../../config/secret')());
-        user.salt = '';
-        user.password = '';
-        return {
-            token: token,
-            expires: expires,
-            user: user
-        };
-    },
-    expiresIn: function (numOfSecond) {
-        var dateObj = new Date();
-        return dateObj.setSeconds(dateObj.getSeconds() + numOfSecond);
+}
+
+function hashPassword(password, salt) {
+    if (salt && password) {
+        return crypto.pbkdf2Sync(password, new Buffer(salt, 'base64'), 10000, 64, 'SHA1').toString('base64');
+    } else {
+        return password;
     }
+}
+function genToken(user) {
+    var expires = expiresIn(require('../../config/config').tokenexpires); // in seconds.
+    var token = jwt.encode({
+        exp: expires, user: user
+    }, require('../../config/secret')());
+    user.salt = '';
+    user.password = '';
+    return {
+        token: token,
+        expires: expires,
+        user: user
+    };
+}
+function expiresIn(numOfSecond) {
+    var dateObj = new Date();
+    return dateObj.setSeconds(dateObj.getSeconds() + numOfSecond);
 }
 module.exports = user;
