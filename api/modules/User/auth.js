@@ -51,7 +51,7 @@ var auth = {
                     return;
                 }
                 else {
-                    userFun.findUser(username, password, res);
+                    userFun.findUser(newuser.username, newuser.password, res);
                     res.status(201);
                 }
             });
