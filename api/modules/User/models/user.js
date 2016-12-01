@@ -23,6 +23,7 @@ var userSchema = new Schema({
     password: {type: String, required: true},
     salt: String,
     role: [{type: String}],
+    Image: String,
     meta: {
         age: Number,
         location: String,

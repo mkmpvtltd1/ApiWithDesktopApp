@@ -1,21 +1,18 @@
 {
-  "name": "theater",
-  "version": "1.0.0",
-  "description": "Theater Desktop application",
+  "name": "theater-app",
+  "version": "0.1.0",
+  "description": "Theater app for electron",
   "main": "index.js",
-  "dependencies": {
-    "electron": "^1.4.8"
-  },
-  "devDependencies": {},
   "scripts": {
+    "start":"electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "theater",
     "electron",
-    "angular",
-    "2"
+    "theater",
+    "app",
+    "desktop"
   ],
-  "author": "Manoj Kumar Mahato",
+  "author": "Manoj Kumar Mahtao",
   "license": "ISC"
 }
