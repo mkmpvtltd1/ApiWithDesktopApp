@@ -4,7 +4,7 @@
   "description": "Theater app for electron",
   "main": "index.js",
   "scripts": {
-    "start":"electron .",
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -14,5 +14,9 @@
     "desktop"
   ],
   "author": "Manoj Kumar Mahtao",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.4.10",
+    "electron-packager": "^8.3.0"
+  }
 }
