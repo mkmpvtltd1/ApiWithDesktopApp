@@ -25,7 +25,7 @@ var userSchema = new Schema({
     role: [{type: String}],
     Image: String,
     meta: {
-        age: Number,
+        DOB: Date,
         location: String,
         website: String
     },

@@ -22,11 +22,17 @@
             },
             BindEvent: function () {
                 $('#btnSignOut').on('click', function () {
-                    jConfirm('Are you sure?', 'Sign out Conformation!!', function(r) {
-                        if(r) {localStorage.setItem("user", '');
-                        window.location.href = "../login.html";}
-                        else {}
+                    jConfirm('Are you sure?', 'Sign out Conformation!!', function (r) {
+                        if (r) {
+                            localStorage.setItem("user", '');
+                            window.location.href = "../login.html";
+                        }
+                        else {
+                        }
                     });
+                });
+                $('#btnProfile').on('click', function () {
+                    $('#popup_content').load('./Profile/profile.html')
                 });
             },
             BindData: function () {
@@ -87,3 +93,11 @@
         $.CallMeDash(p);
     };
 })(jQuery);
+
+/*
+var PublicFuntion=
+(function ($) {
+    $.fn.PublicFuntion = function (p) {
+        $.PublicFuntion(p);
+    };
+})(jQuery);*/

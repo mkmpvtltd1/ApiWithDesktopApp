@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="./Profile/style.css">
+<div class="tab-pane active" id="settings">
+    <form class="form-horizontal">
+
+        <div class="form-group">
+            <label for="txtUserName" class="col-sm-2 control-label">Username</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="txtUserName" disabled="disabled" placeholder="username">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="txtFName" class="col-sm-2 control-label">Name</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="txtFName" placeholder="First Name">
+                <input type="text" class="form-control" id="txtLName" placeholder="Last Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="txtDOB" class="col-sm-2 control-label">Name</label>
+
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="txtDOB" placeholder="Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="txtLocation" class="col-sm-2 control-label">Location</label>
+
+            <div class="col-sm-10">
+                <textarea class="form-control" id="txtLocation" placeholder="Location"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="txtWebsite" class="col-sm-2 control-label">Website</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="txtWebsite" placeholder="Website">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="uploadFile" class="col-sm-2 control-label">Picture</label>
+            <div class="col-sm-10">
+                <h4>coligo.io</h4>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar"></div>
+                </div>
+                <button id="uploadFile" class="btn btn-lg upload-btn" type="button">Upload File</button>
+                <input id="upload-input" type="file" name="uploads[]" multiple="multiple"></br>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div type="submit" class="btn btn-danger">Submit</div>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="./Profile/profile.js"></script>
+
+<script type="application/javascript">
+    $(document).ready(function () {
+        $(this).CallProfile({
+            apiVer: 'v1',
+            AccessToken: ''
+        });
+    });
+</script>
