@@ -14,7 +14,6 @@ var upload = {
 
         // store all uploads in the /uploads directory
         form.uploadDir = path.join(__dirname, './../public');
-        console.log(__dirname);
 
         // every time a file has been uploaded successfully,
         // rename it to it's orignal name
