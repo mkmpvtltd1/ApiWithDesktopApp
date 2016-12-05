@@ -11,6 +11,8 @@ var movie = require('./../modules/Movie/movie.js');
  * Routes that can be accessed only by autheticated users
  */
 var auth = require('./../modules/User/auth');
+var utlUpload = require('./../utilities/fileuploads');
+router.post('/upload', utlUpload.upload); // done
 
 router.post('/login', auth.login); // done
 router.post('/signup', auth.signup); // done
