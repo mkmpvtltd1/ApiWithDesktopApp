@@ -20,6 +20,21 @@ var auth = {
         }
         userFun.findUser(username, password, res);
     },
+    UpdateUser: function (req, res, next) {
+        var id = req.query.id;
+        User.find({_id: id}, function (error, user) {
+            if (error) return next(error);
+            if (!user) {
+                return res.status(404).json({
+                    message: 'User with id ' + id + ' can not be found.'
+                });
+            }
+            user[0].update(req.body, function (error, user) {
+                if (error) return next(error);
+                res.json(user);
+            });
+        });
+    },
     signup: function (req, res) {
         var username = req.body.username || '';
         var password = req.body.password || '';
@@ -40,8 +55,8 @@ var auth = {
                 name: name,
                 username: username,
                 password: password,
-                role:role,
-                meta:meta
+                role: role,
+                meta: meta
             });
 
             // call the built-in save method to save to the database

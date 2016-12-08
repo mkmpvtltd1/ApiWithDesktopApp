@@ -73,7 +73,6 @@
             },
             ajaxCall: function (config) {
                 var token = JSON.parse(localStorage.getItem("user")).token;
-                // var token = window.pubVariable === undefined ? '' : window.pubVariable.token;
                 $.ajax({
                     type: config.MethodType,
                     contentType: config.contentType,

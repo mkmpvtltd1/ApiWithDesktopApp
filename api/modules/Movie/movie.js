@@ -46,7 +46,7 @@ var movies = {
         });
     },
     update: function (req, res, next) {
-        var updatemovie = new Movie(req.body);
+        // var updatemovie = new Movie(req.body);
         var id = req.query.id;
         Movie.find({_id: id}, function (error, movie) {
             if (error) return next(error);

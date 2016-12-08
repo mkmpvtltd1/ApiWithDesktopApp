@@ -16,12 +16,13 @@ router.post('/upload', utlUpload.upload); // done
 
 router.post('/login', auth.login); // done
 router.post('/signup', auth.signup); // done
+router.put('/api/v1/users:id?', auth.UpdateUser);
 
-router.get('/api/v1/movies', movie.getAll);
-router.get('/api/v1/movie:id?', movie.getOne);
-router.post('/api/v1/movie', movie.create);
-router.put('/api/v1/movie:id?', movie.update);
-router.delete('/api/v1/movie:id?', movie.delete);
+router.get('/api/v1/movies', movie.getAll);  //done
+router.get('/api/v1/movie:id?', movie.getOne); //done
+router.post('/api/v1/movie', movie.create);  //done
+router.put('/api/v1/movie:id?', movie.update); //done
+router.delete('/api/v1/movie:id?', movie.delete); //done
 //router.get('/api/v1/movie/:id', products.getOne);
 //router.delete('/api/v1/movie/:id', products.delete);
 
