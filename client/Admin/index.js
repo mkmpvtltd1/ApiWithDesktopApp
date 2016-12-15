@@ -34,6 +34,9 @@
                 $('#btnProfile').on('click', function () {
                     $('#popup_content').load('./Profile/profile.html')
                 });
+                $('#divSettings').on('click', function () {
+                    $('#popup_content').load('./Settings/Settings.html')
+                });
             },
             BindData: function () {
                 var user = JSON.parse(localStorage.getItem("user"));
