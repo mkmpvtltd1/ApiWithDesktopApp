@@ -37,6 +37,10 @@
                 $('#divSettings').on('click', function () {
                     $('#popup_content').load('./Settings/Settings.html')
                 });
+                $(window).resize(function(){
+                    $('#popup_content').css("height:",$(window).innerHeight()-178);
+                });
+                $('#popup_content').css("height:",$(window).innerHeight()-178);
             },
             BindData: function () {
                 var user = JSON.parse(localStorage.getItem("user"));
