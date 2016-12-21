@@ -11,33 +11,14 @@
             "name": "Launch Program",
             "program": "${workspaceRoot}/api/server.js",
             "cwd": "${workspaceRoot}"
-        },{
-            "name": "Launch",
+        }, {
+            "name": "Debug Main Process",
             "type": "node",
             "request": "launch",
-            "program": "main.js",
-            "stopOnEntry": false,
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
-            "runtimeArgs": [
-                ".",
-                "--enable-logging"
-            ],
-            "env": {},
-            "externalConsole": false,
-            "sourceMaps": false,
-            "outDir": null
-        },
-        {
-            "name": "Attach",
-            "type": "node",
-            "request": "attach",
-            "port": 5858,
-            "sourceMaps": false,
-            "outDir": null
-        },
-        {
+            "cwd": "${workspaceRoot}/client",
+            "runtimeExecutable": "${workspaceRoot}/client/node_modules/.bin/electron.cmd",
+            "program": "${workspaceRoot}/client/index.js"
+        }, {
             "type": "node",
             "request": "attach",
             "name": "Attach to Process",
