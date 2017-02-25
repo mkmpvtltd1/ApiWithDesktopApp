@@ -5,7 +5,7 @@ It have basic User management api and basic demo api call from desctop app made 
 #Project Setup 
 1. run npm install in api, client, web folder for install dependencies.
 2. restore Database to mongodb.
-3. goto folder api/config/config.js :- update mongodb connection string as mongodb server and database name.
+3. goto file api/config/config.js :- update mongodb connection string as mongodb server and database name.
 
 #Run Project 
 1. Goto api folder in terminal(command) run npm start
